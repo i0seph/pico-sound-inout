@@ -2,6 +2,7 @@
 라즈베리 파이 피코로 구현하는 USB 마이크와 사운드 카드 장치
 
 이 글은 chatgpt랑 수다를 떤 내용을 바탕으로 작성된 글이다. 
+(역시 엉망이다 -.- , 수정중)
 
 실전에서 아직 시도 조차 안했다. 
 
@@ -15,16 +16,16 @@
 + CJMCU-1334 DAC Module CJMCU-1334
 
 ## 핀 연결
-+ I2S BCK (Bit Clock)	GPIO10
-+ I2S LRCK (Left/Right Clock)	GPIO11
++ I2S BCLK (Bit Clock)	GPIO09
++ WSEL (LRCK) GPIO10 // 무조건 BCLK + 1 
 + I2S DIN (INMP441 마이크 데이터)	GPIO12
-+ I2S DOUT (CJMCU-1334 DAC 데이터)	GPIO9
++ I2S DOUT (CJMCU-1334 DAC 데이터)	GPI11
 
 ## 소프트웨어
 
 ### 라이브러리
 + Adafruit TinyUSB
-+ I2S 라이브러리
++ I2S 라이브러리 ( Pi Pico 보드 선택에 자동으로 설치됨)
 
 ### 코드
 + pico-soundcard.ino
